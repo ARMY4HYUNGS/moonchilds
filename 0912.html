@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, viewport-fit=cover" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Log Out button styling */
+    .logout-btn {
+      position: absolute;
+      top: 10px;
+      left: 25px;
+      background-color: rgb(157, 0, 255);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .logout-btn:hover {
+      background-color: darkred;
+    }
+
+    /* Container for the dropdowns */
+    .container {
+      position: absolute;
+      top: 60px; /* Adjusted to make room for the Log Out button */
+      left: 20px;
+      background-color: rgb(162, 0, 255);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Dropdown button styling */
+    .dropbtn {
+      background-color: indigo;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .dropbtn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Dropdown menu styling */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 200px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Embed container styling */
+    .embed-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .embed-container iframe {
+      border-radius: 12px;
+      width: 100%;
+      height: 352px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Log Out button -->
+  <button class="logout-btn" onclick="handleLogout()">Log Out</button>
+
+  <h1>안녕하세요!</h1>
+  <div class="typing-container">
+    <h3 class="typing-effect">환영합니다 사용자 RM, 무엇을 도와드릴까요?</h3>
+  </div>
+
+  <div class="container">
+    <div class="dropdown">
+      <button class="dropbtn">내 폴더</button>
+      <div class="dropdown-content">
+        <a href="https://x.com/bts_bighit/status/345193080858738688">0613 : 데뷔</a>
+        <a href="#" id="play-song">0709 : 내 사랑</a>
+        <a href="message.html">??? : 출생.</a>
+      </div>
+    </div>
+    <!-- Embed container -->
+    <div id="embed-container" class="embed-container"></div>
+  </div>
+
+  <script>
+    function handleLogout() {
+      // Confirm the logout action
+      var confirmed = confirm("Are you sure you want to log out?");
+      
+      if (confirmed) {
+        // Show a message before redirecting
+        alert("See you again!");
+        // Redirect to the logout page
+        window.location.href = 'moonchild.html';
+      }
+    }
+
+    document.getElementById('play-song').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+
+      var embedContainer = document.getElementById('embed-container');
+      embedContainer.innerHTML = `
+        <iframe src="https://open.spotify.com/embed/track/133ocfbXXG4HTk76qgSeUb?utm_source=generator" 
+                frameborder="0" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"></iframe>
+      `;
+    });
+  </script>
+
+</body>
+</html>

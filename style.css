@@ -1,0 +1,236 @@
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body Styles */
+body {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Allows content to expand in height */
+  width: 100%;
+  height: 100%; /* Adjust to full body height */
+  padding: 20px; /* Optional padding for spacing */
+}
+
+/* Main container */
+.main {
+  width: 100%;
+  max-width: 1200px; /* Normal webpage width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Section container */
+.section-main {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px 0; /* Added margin for spacing */
+}
+
+/* Tab styles */
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  background: #333;
+  padding: 1rem;
+  border-radius: 8px 8px 0 0;
+  width: 100%; /* Ensure it takes the full width */
+}
+
+.tab-item {
+  flex-grow: 1;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-item.active {
+  background: #444;
+}
+
+/* Input styles */
+.input-wrap input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  background: #222;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input-wrap input::placeholder {
+  color: #888;
+}
+
+.btn-confirm {
+  padding: 0.8rem 1.2rem;
+  background: indigo;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-confirm:hover {
+  background: #4b0082; /* Darker indigo */
+}
+
+/* Text Guide Styles */
+.guide p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 10px 0;
+}
+
+.guide a {
+  color: #0ae;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.guide a:hover {
+  color: white;
+}
+
+/* Emoji container */
+.emoji-wrap {
+  margin-top: 1rem;
+}
+
+/* Footer Styles */
+footer {
+  background-color: black;
+  padding: 1rem;
+  border-top: 1px solid #555;
+  text-align: center;
+  width: 100%; /* Ensure footer takes up full width */
+}
+
+footer span {
+  font-size: 14px;
+  color: white;
+}
+
+/* Glitch Effect for Background Text */
+body::before,
+body::after {
+  content: 'MOONCHILD 0912';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10vw;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+body::before {
+  color: rgb(157, 0, 255);
+  z-index: -2;
+  animation: glitch 2s infinite;
+}
+
+body::after {
+  color: #DDA0DD;
+  z-index: -3;
+  animation: glitch 2s infinite;
+  opacity: 0.7;
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+  0% {
+    clip: rect(12px, 9999px, 44px, 0);
+    transform: skew(0.1deg);
+  }
+  20% {
+    clip: rect(80px, 9999px, 90px, 0);
+    transform: skew(0.3deg);
+  }
+  40% {
+    clip: rect(50px, 9999px, 70px, 0);
+    transform: skew(0.5deg);
+  }
+  60% {
+    clip: rect(20px, 9999px, 40px, 0);
+    transform: skew(0.2deg);
+  }
+  80% {
+    clip: rect(30px, 9999px, 80px, 0);
+    transform: skew(0.7deg);
+  }
+  100% {
+    clip: rect(10px, 9999px, 30px, 0);
+    transform: skew(0.1deg);
+  }
+}
+
+/* Style for hint button */
+.hint-button {
+  cursor: pointer;
+  color: white;
+  border: none;
+  background: none;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* Style for hint text */
+.hint {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Optional: adds a dark background for better contrast */
+  padding: 10px; /* Optional: adds some padding around the hint text */
+  border-radius: 5px; /* Optional: rounds the corners of the hint box */
+}
+
+/* Login Input Styles */
+#username,
+#password {
+  background: black;
+  color: black;
+}
+
+/* Popup Styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  z-index: 1000;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: blue;
+  color: #white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  z-index: 1001;
+}
